@@ -51,11 +51,11 @@ BASEDIR="$(basename "$KERNEL_DIR")"
 # Kernel name
 KERNELNAME=Aphrodite
 CODENAME=Learn
-VARIANT=EAS
+VARIANT=HMP
 BASE=CLO
 
 # Changelogs
-CL_URL="https://github.com/mrclfd/android_kernel_asus_sdm636/commits/codelinaro-eas"
+CL_URL="https://github.com/mrclfd/android_kernel_asus_sdm636/commits/codelinaro-hmp"
 
 # The name of the Kernel, to name the ZIP
 ZIPNAME="$KERNELNAME-$CODENAME-$VARIANT-$BASE"
@@ -218,7 +218,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d")
   	fi
 
 	msger -n "|| Cloning Anykernel ||"
-	git clone https://github.com/Tiktodz/AnyKernel3.git -b eas AnyKernel3
+	git clone https://github.com/Tiktodz/AnyKernel3.git -b hmp AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
@@ -394,7 +394,7 @@ gen_zip()
 	sed -i "s/kernel.compiler=.*/kernel.compiler=$KBUILD_COMPILER_STRING/g" anykernel.sh
 	sed -i "s/kernel.made=.*/kernel.made=raπ/g" anykernel.sh
 	sed -i "s/kernel.version=.*/kernel.version=$KERVER/g" anykernel.sh
-	sed -i "s/message.word=.*/message.word=Maaf ya aku mabok./g" anykernel.sh
+	sed -i "s/message.word=.*/message.word=Sorry ya aku mabok./g" anykernel.sh
 	sed -i "s/build.date=.*/build.date=$DATE/g" anykernel.sh
 	sed -i "s/build.type=.*/build.type=$BASE/g" anykernel.sh
 	sed -i "s/supported.versions=.*/supported.versions=9-13/g" anykernel.sh
