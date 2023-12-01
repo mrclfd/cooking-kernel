@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 # shellcheck disable=SC2154
 
  # Script For Building Android arm64 Kernel
@@ -182,7 +182,7 @@ KERVER=$(make kernelversion)
 COMMIT_HEAD=$(git log --oneline -1)
 
 # Set Date
-DATE=$(TZ=Asia/Jakarta date +"%Y%m%d")
+DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%h%m%s")
 
 # Now Its time for other stuffs like cloning, exporting, etc
 
