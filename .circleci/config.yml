@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: ubuntu:jammy-20211029
+      - image: ghcr.io/mrclfd/kernel:build
    steps:
       - run:
           command: |
