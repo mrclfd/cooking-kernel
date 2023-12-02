@@ -62,7 +62,7 @@ ZIPNAME="$KERNELNAME-$CODENAME-$VARIANT-$BASE"
 
 # Build Author
 # Take care, it should be a universal and most probably, case-sensitive
-AUTHOR="queen"
+AUTHOR="raπ"
 
 # Architecture
 ARCH=arm64
@@ -151,7 +151,7 @@ LOG_DEBUG=0
 
 # shellcheck source=/etc/os-release
 export DISTRO=$(source /etc/os-release && echo "${NAME}")
-export KBUILD_BUILD_HOST=$(uname -a | awk '{print $2}')
+export KBUILD_BUILD_HOST="android-build" # $(uname -a | awk '{print $2}')
 export CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 TERM=xterm
 
@@ -182,7 +182,7 @@ KERVER=$(make kernelversion)
 COMMIT_HEAD=$(git log --oneline -1)
 
 # Set Date
-DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%h%m%s")
+DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%H%i%s")
 
 # Now Its time for other stuffs like cloning, exporting, etc
 
