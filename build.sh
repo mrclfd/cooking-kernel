@@ -182,7 +182,7 @@ KERVER=$(make kernelversion)
 COMMIT_HEAD=$(git log --oneline -1)
 
 # Set Date
-DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%H%M%S")
+DATE=$(TZ=Asia/Jakarta date +"%Y%m%d")
 
 # Now Its time for other stuffs like cloning, exporting, etc
 
@@ -428,7 +428,7 @@ gen_zip()
  		fi
 		curl -sLo zipsigner-3.0.jar https://github.com/Magisk-Modules-Repo/zipsigner/raw/master/bin/zipsigner-3.0-dexed.jar
 		java -jar zipsigner-3.0.jar "$ZIP_FINAL".zip "$ZIP_FINAL"-signed.zip
-		ZIP_FINAL="$ZIP_FINAL-signed"
+		ZIP_FINAL="$ZIP_FINAL-$(TZ=Asia/Jakarta date +"%H%M%S")-signed"
 	fi
 
 	if [ "$PTTG" = 1 ]
