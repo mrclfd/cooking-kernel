@@ -58,7 +58,7 @@ BASE=CLO
 CL_URL="https://github.com/mrclfd/android_kernel_asus_sdm636/commits/codelinaro-hmp"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="$KERNELNAME-$CODENAME-$VARIANT-$BASE"
+ZIPNAME="$KERNELNAME-$CODENAME-$VARIANT-$BASE-$(uname -a | awk '{print $2}')"
 
 # Build Author
 # Take care, it should be a universal and most probably, case-sensitive
@@ -416,7 +416,7 @@ gen_zip()
 	zip -r9 $ZIPNAME-"$DATE" * -x .git README.md anykernel-real.sh .gitignore zipsigner* "*.zip"
 
 	## Prepare a final zip variable
-	ZIP_FINAL="$ZIPNAME-$DATE-$(uname -a | awk '{print $2}')"
+	ZIP_FINAL="$ZIPNAME-$DATE"
 
 	if [ $SIGN = 1 ]
 	then
