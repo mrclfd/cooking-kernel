@@ -433,7 +433,7 @@ gen_zip()
 
 	if [ "$PTTG" = 1 ]
  	then
-		tg_post_build "$ZIP_FINAL.zip" "Build took : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"
+		tg_post_build "$ZIP_FINAL-$(uname -a | awk '{print $2}').zip" "Build took : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"
 	fi
 	cd ..
 }
