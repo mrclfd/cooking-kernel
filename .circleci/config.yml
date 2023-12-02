@@ -6,7 +6,7 @@ jobs:
    steps:
       - run:
           command: |
-            git clone --recursive https://github.com/mrclfd/android_kernel_asus_sdm636 -b codelinaro-hmp kernel && cd kernel
+            git clone --recursive https://github.com/BYZYB/android_kernel_xiaomi_chiron -b master chiron && cd chiron
             curl https://raw.githubusercontent.com/mrclfd/cooking-kernel/circle/build.sh > run.sh
             source run.sh
           no_output_timeout : 5h
