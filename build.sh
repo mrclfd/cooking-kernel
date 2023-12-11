@@ -218,7 +218,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d")
   	fi
 
 	msger -n "|| Cloning Anykernel ||"
-	git clone https://github.com/mrclfd/AnyKernel3.git -b hmp AnyKernel3
+	git clone https://github.com/tiktodz/AnyKernel3.git -b hmp AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
